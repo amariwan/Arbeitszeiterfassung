@@ -1,0 +1,111 @@
+@startuml
+set namespaceSeparator ::
+
+class "arbeitszeiterfassung::json.dart::JsonLogin" {
+  +String username
+  +String sessionkey
+  +List<Dayandworkedtime> dayandworkedtimes
+  +Map<String, dynamic> toJson()
+}
+
+class "arbeitszeiterfassung::json.dart::Dayandworkedtime" {
+  +WorkingDate day
+  +String hasworked
+  +Map<String, dynamic> toJson()
+}
+
+"arbeitszeiterfassung::json.dart::Dayandworkedtime" o-- "arbeitszeiterfassung::json.dart::WorkingDate"
+
+class "arbeitszeiterfassung::json.dart::WorkingDate" {
+  +int year
+  +int month
+  +int day
+  +Map<String, dynamic> toJson()
+}
+
+class "arbeitszeiterfassung::login.dart::LogIn" {
+  +TextEditingController usernameController
+  +TextEditingController passwordController
+  +bool notToLogin
+  +_LogInState createState()
+}
+
+"arbeitszeiterfassung::login.dart::LogIn" o-- "flutter::src::widgets::editable_text.dart::TextEditingController"
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "arbeitszeiterfassung::login.dart::LogIn"
+
+class "arbeitszeiterfassung::login.dart::_LogInState" {
+  -GlobalKey<FormState> _formKey
+  +Widget build()
+  +dynamic fetchData()
+  +dynamic popupDialog()
+}
+
+"arbeitszeiterfassung::login.dart::_LogInState" o-- "flutter::src::widgets::framework.dart::GlobalKey<FormState>"
+"flutter::src::widgets::framework.dart::State" <|-- "arbeitszeiterfassung::login.dart::_LogInState"
+
+class "arbeitszeiterfassung::main.dart::TimeRecording" {
+  +State<TimeRecording> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "arbeitszeiterfassung::main.dart::TimeRecording"
+
+class "arbeitszeiterfassung::main.dart::_TimeRecordingState" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "arbeitszeiterfassung::main.dart::_TimeRecordingState"
+
+class "arbeitszeiterfassung::workedModel.dart::FTableRowWorkedModel" {
+  {static} +List<String> headers()
+  +List<Widget> build()
+  +void updateValue()
+  +bool hasSameValue()
+  +FTableRow<WorkedModel> clone()
+}
+
+"fwidget::widgets::table.dart::FTableRow" <|-- "arbeitszeiterfassung::workedModel.dart::FTableRowWorkedModel"
+
+class "arbeitszeiterfassung::workedModel.dart::WorkedModel" {
+  +WorkingDate datum
+  +String hasworked
+  +int hashCode
+  +WorkedModel clone()
+  +bool ==()
+}
+
+"arbeitszeiterfassung::workedModel.dart::WorkedModel" o-- "arbeitszeiterfassung::json.dart::WorkingDate"
+"fwidget::helpers::cloneable.dart::FCloneable" <|-- "arbeitszeiterfassung::workedModel.dart::WorkedModel"
+
+class "arbeitszeiterfassung::workingTime.dart::WorkingPage" {
+  +JsonLogin jsonLogin
+  +bool isStarted
+  +bool isStopped
+  +TextEditingController workingPageController
+  +TextEditingController passwordController
+  +TextEditingController startTimeController
+  +TextEditingController stopTimeController
+  +TextEditingController requestController
+  +TextEditingController requestTimerController
+  +_WorkingPageState createState()
+  +dynamic fetchData()
+}
+
+"arbeitszeiterfassung::workingTime.dart::WorkingPage" o-- "arbeitszeiterfassung::json.dart::JsonLogin"
+"arbeitszeiterfassung::workingTime.dart::WorkingPage" o-- "flutter::src::widgets::editable_text.dart::TextEditingController"
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "arbeitszeiterfassung::workingTime.dart::WorkingPage"
+
+class "arbeitszeiterfassung::workingTime.dart::_WorkingPageState" {
+  -Timer _timer
+  -String _currentTime
+  +dynamic data
+  +void initState()
+  +void dispose()
+  +Widget build()
+  -List<Dayandworkedtime> _convertInfoFromWebSocket()
+}
+
+"arbeitszeiterfassung::workingTime.dart::_WorkingPageState" o-- "dart::async::Timer"
+"flutter::src::widgets::framework.dart::State" <|-- "arbeitszeiterfassung::workingTime.dart::_WorkingPageState"
+
+
+@enduml

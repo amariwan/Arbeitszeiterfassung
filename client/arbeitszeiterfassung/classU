@@ -1,0 +1,92 @@
+classDiagram
+class JsonLogin
+JsonLogin : +username String
+JsonLogin : +sessionkey String
+JsonLogin : +dayandworkedtimes List~Dayandworkedtime~
+JsonLogin : +toJson() Map<String, dynamic>
+
+class Dayandworkedtime
+Dayandworkedtime : +day WorkingDate
+Dayandworkedtime o-- WorkingDate
+Dayandworkedtime : +hasworked String
+Dayandworkedtime : +toJson() Map<String, dynamic>
+
+class WorkingDate
+WorkingDate : +year int
+WorkingDate : +month int
+WorkingDate : +day int
+WorkingDate : +toJson() Map<String, dynamic>
+
+class LogIn
+LogIn : +usernameController TextEditingController
+LogIn o-- TextEditingController
+LogIn : +passwordController TextEditingController
+LogIn o-- TextEditingController
+LogIn : +notToLogin bool
+LogIn : +createState() _LogInState
+StatefulWidget <|-- LogIn
+
+class _LogInState
+_LogInState : -_formKey GlobalKey~FormState~
+_LogInState o-- GlobalKey~FormState~
+_LogInState : +build() Widget
+_LogInState : +fetchData() dynamic
+_LogInState : +popupDialog() dynamic
+State <|-- _LogInState
+
+class TimeRecording
+TimeRecording : +createState() State<TimeRecording>
+StatefulWidget <|-- TimeRecording
+
+class _TimeRecordingState
+_TimeRecordingState : +build() Widget
+State <|-- _TimeRecordingState
+
+class FTableRowWorkedModel
+FTableRowWorkedModel : +headers()$ List<String>
+FTableRowWorkedModel : +build() List<Widget>
+FTableRowWorkedModel : +updateValue() void
+FTableRowWorkedModel : +hasSameValue() bool
+FTableRowWorkedModel : +clone() FTableRow<WorkedModel>
+FTableRow <|-- FTableRowWorkedModel
+
+class WorkedModel
+WorkedModel : +datum WorkingDate
+WorkedModel o-- WorkingDate
+WorkedModel : +hasworked String
+WorkedModel : +hashCode int
+WorkedModel : +clone() WorkedModel
+WorkedModel : +==() bool
+FCloneable <|.. WorkedModel
+
+class WorkingPage
+WorkingPage : +jsonLogin JsonLogin
+WorkingPage o-- JsonLogin
+WorkingPage : +isStarted bool
+WorkingPage : +isStopped bool
+WorkingPage : +workingPageController TextEditingController
+WorkingPage o-- TextEditingController
+WorkingPage : +passwordController TextEditingController
+WorkingPage o-- TextEditingController
+WorkingPage : +startTimeController TextEditingController
+WorkingPage o-- TextEditingController
+WorkingPage : +stopTimeController TextEditingController
+WorkingPage o-- TextEditingController
+WorkingPage : +requestController TextEditingController
+WorkingPage o-- TextEditingController
+WorkingPage : +requestTimerController TextEditingController
+WorkingPage o-- TextEditingController
+WorkingPage : +createState() _WorkingPageState
+WorkingPage : +fetchData() dynamic
+StatefulWidget <|-- WorkingPage
+
+class _WorkingPageState
+_WorkingPageState : -_timer Timer
+_WorkingPageState o-- Timer
+_WorkingPageState : -_currentTime String
+_WorkingPageState : +data dynamic
+_WorkingPageState : +initState() void
+_WorkingPageState : +dispose() void
+_WorkingPageState : +build() Widget
+_WorkingPageState : -_convertInfoFromWebSocket() List<Dayandworkedtime>
+State <|-- _WorkingPageState

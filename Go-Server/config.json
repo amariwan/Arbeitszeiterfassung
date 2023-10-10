@@ -1,0 +1,9 @@
+{
+    "ldapServer"   : "127.0.0.1",
+	"ldapPort"     : 10389,
+	"ldapBindDN"   : "login",
+	"ldapPassword" : "password",
+	"ldapSearchDN" : "dc=example,dc=com"
+}
+
+
