@@ -1,82 +1,83 @@
-
 # Arbeitszeiterfassung
 
-Ein Projekt zur Verwaltung und Nachverfolgung von Arbeitszeiten, entwickelt mit einer Kombination aus JavaScript, Dart, Go, CMake, C++ und HTML.
+**Arbeitszeiterfassung** is a cross-platform application for tracking and managing working hours. It offers a streamlined interface, comprehensive reporting features, and flexible configuration options. The project integrates multiple technologies, including JavaScript, Dart, Go, C++, CMake, and HTML.
 
-## Features
+## Key Features
 
-- **Benutzerfreundliche Oberfläche**: Erfasse und verwalte deine Arbeitszeiten einfach.
-- **Plattformübergreifende Unterstützung**: Funktioniert auf verschiedenen Geräten und Betriebssystemen.
-- **Statistiken und Berichte**: Analysiere deine Arbeitszeiterfassung mit integrierten Berichts- und Statistikfunktionen.
-- **Anpassbare Einstellungen**: Passe das System an deine individuellen Anforderungen an.
-
-## Technologien
-
-Dieses Projekt verwendet verschiedene Technologien:
-
-- **JavaScript** (95.8%): Hauptsprache für die Entwicklung der Frontend-Komponenten.
-- **Dart** (1.6%): Für plattformübergreifende mobile Anwendungen.
-- **Go** (1.3%): Zur Implementierung der Backend-Logik.
-- **CMake** (0.7%) und **C++** (0.5%): Genutzt für systemnahe Funktionen.
-- **HTML** (0.1%): Zur Strukturierung der Web-Oberfläche.
+- **User-Friendly Interface** – Intuitive design for efficient time tracking  
+- **Cross-Platform Support** – Compatible with various devices and operating systems  
+- **Analytics and Reporting** – Built-in tools to visualize and evaluate time usage  
+- **Customizable Configuration** – Adaptable to different workflows and requirements  
 
 ## Installation
 
-### Voraussetzungen
+### Prerequisites
 
-- Node.js und npm
-- Go-Compiler
+Ensure the following dependencies are installed:
+
+- Node.js (with npm)
 - Dart SDK
+- Go compiler
 
-### Schritte
+### Setup Instructions
 
-1. **Repository klonen**:
+1. Clone the repository:
+
    ```bash
    git clone https://github.com/amariwan/Arbeitszeiterfassung.git
    cd Arbeitszeiterfassung
    ```
 
-2. **Abhängigkeiten installieren**:
+2. Install dependencies:
+
    ```bash
    npm install
    ```
 
-3. **Server starten**:
+3. Start the development server:
+
    ```bash
    npm start
    ```
 
-4. **Zugriff auf die Anwendung**:
-   Öffne im Browser: `http://localhost:3000`
+4. Open your browser and navigate to:
 
-## Nutzung
-
-1. Registriere dich oder melde dich an.
-2. Erfasse deine Arbeitszeiten im Dashboard.
-3. Erstelle Berichte und analysiere deine Arbeitszeiten.
-
-## Beiträge
-
-Beiträge zu diesem Projekt sind willkommen! Bitte führe folgende Schritte aus, um beizutragen:
-
-1. Forke das Repository.
-2. Erstelle einen neuen Branch:
-   ```bash
-   git checkout -b feature/neue-funktion
    ```
-3. Führe Änderungen durch und committe:
-   ```bash
-   git commit -m "Neue Funktion hinzugefügt"
+   http://localhost:3000
    ```
-4. Sende einen Pull-Request.
 
-## Lizenz
+## Usage
 
-Dieses Projekt steht unter der **MIT-Lizenz**. Siehe die [LICENSE-Datei](LICENSE) für weitere Informationen.
+1. Register a new account or log in.
+2. Use the dashboard to log working hours.
+3. Generate reports and analyze your tracked time.
 
-## Kontakt
+## Contributing
 
-Ersteller: [amariwan](https://github.com/amariwan)  
-Bei Fragen oder Feedback kannst du gerne ein Issue erstellen.
+Contributions are welcome. To contribute:
 
+1. Fork the repository.
+2. Create a feature branch:
 
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+3. Commit your changes:
+
+   ```bash
+   git commit -m "Add new feature"
+   ```
+
+4. Open a pull request.
+
+Please ensure your code adheres to the existing style and includes appropriate documentation where applicable.
+
+## License
+
+This project is licensed under the **MIT License**. For details, refer to the [LICENSE](LICENSE) file.
+
+## Contact
+
+Created by [amariwan](https://github.com/amariwan).  
+For questions or feedback, feel free to open an [issue](https://github.com/amariwan/Arbeitszeiterfassung/issues).
