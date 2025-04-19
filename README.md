@@ -1,6 +1,3 @@
-Hier ist ein Vorschlag für eine README-Datei für dein Projekt **Arbeitszeiterfassung**. Bitte passe die Inhalte entsprechend deinen spezifischen Anforderungen und Details des Projekts an:
-
----
 
 # Arbeitszeiterfassung
 
@@ -82,6 +79,4 @@ Dieses Projekt steht unter der **MIT-Lizenz**. Siehe die [LICENSE-Datei](LICENSE
 Ersteller: [amariwan](https://github.com/amariwan)  
 Bei Fragen oder Feedback kannst du gerne ein Issue erstellen.
 
----
 
-Falls du weitere Details hinzufügen möchtest, lass es mich wissen!
